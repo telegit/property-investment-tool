@@ -1,0 +1,13 @@
+# Web Application Project Dependencies
+flask>=3.0.0
+fastapi>=0.104.0
+uvicorn>=0.24.0
+python-dotenv>=1.0.0
+requests>=2.31.0
+pydantic>=2.5.0
+
+# Development
+pytest>=7.4.0
+pytest-cov>=4.1.0
+black>=23.12.0
+ruff>=0.1.0
