@@ -3,16 +3,18 @@ Real Estate Market Data API client.
 Host: real-estate-market-data.p.rapidapi.com
 """
 import os
+
 import requests
+import streamlit as st
 
 RAPIDAPI_HOST = "real-estate-market-data.p.rapidapi.com"
 BASE_URL = f"https://{RAPIDAPI_HOST}"
 
 
 def _headers() -> dict:
-    api_key = os.getenv("RAPIDAPI_KEY")
+    api_key = st.secrets.get("RAPIDAPI_KEY") or os.getenv("RAPIDAPI_KEY")
     if not api_key:
-        raise ValueError("RAPIDAPI_KEY not set. Add it to your .env file.")
+        raise ValueError("RAPIDAPI_KEY not set. Add it to .streamlit/secrets.toml or .env.")
     return {
         "x-rapidapi-key": api_key,
         "x-rapidapi-host": RAPIDAPI_HOST,
