@@ -1,6 +1,6 @@
-# zillow-scraper
+# property-investment-tool
 
-Web Application project.
+Real estate investment analyzer — market valuations, cap rates, cash flow estimates, and multi-zip comparisons powered by RapidAPI.
 
 ## Setup
 
@@ -14,15 +14,15 @@ Web Application project.
    uv pip install -r requirements.txt
    ```
 
-3. Copy environment file:
+3. Copy environment file and add your RapidAPI key:
    ```bash
    cp .env.example .env
-   # Edit .env with your configuration
+   # Edit .env and set RAPIDAPI_KEY=your_key
    ```
 
-4. Run the application:
+4. Run the app:
    ```bash
-   python main.py
+   uv run streamlit run main.py
    ```
 
 ## Development
@@ -41,11 +41,11 @@ ruff check .
 ## Project Structure
 
 ```
-zillow-scraper/
-├── main.py           # Entry point
+property-investment-tool/
+├── main.py           # Streamlit dashboard
+├── market_client.py  # RapidAPI client
 ├── requirements.txt  # Dependencies
-├── .env.example     # Environment template
-├── .gitignore
+├── .env.example      # Environment template
 ├── README.md
-└── tests/           # Test files
+└── tests/
 ```
